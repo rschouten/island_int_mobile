@@ -5,13 +5,12 @@ var INDEXES = {
 	'Done': 2
 };
 var whereIndex = INDEXES['All'];
-var activity;
 
 
 // open the window
 $.openWebApp.open();
-$.openWebApp.NavBarHidden = true;
-
+//$.openWebApp.NavBarHidden = true;
+$.openwebApp.activity.actionBar.hide();
 
 /*var popTest = Titanium.UI.createAlertDialog({
 	message: 'Test Successful',
@@ -30,6 +29,10 @@ function doClick(e){
 
 
 $.openWebPage.addEventListener('load',function(e){
+	
+	//var activity;
+	
+
 	  //alert("Clicked from Web");
 	//fromWebview,evalJS
 	//var file_Path = "/mnt/sdcard/ext_sd";
@@ -41,8 +44,10 @@ $.openWebPage.addEventListener('load',function(e){
 	if (cookies != "null"){
 		var arry = [];
 		arry = cookies[0].split("=");
-		$.successCookie.message = arry[1];
-		$.successCookie.show();
+		if (arry[0] == "filename") {
+			$.successCookie.message = arry[1];
+			$.successCookie.show();
+		}
 	}else{
 		$.failCookie.show();
 	}
@@ -60,7 +65,23 @@ $.openWebPage.addEventListener('load',function(e){
 	if (arry[0] == "filename") {
 		
 		var downloadingFileUrl = arry[1];
+		var client = Ti.Network.createHTTPClient({
+			onload : function(e) {
+		         //Ti.API.info("Received text: " + this.responseText);
+		         alert('success');
+		         //fileSavingPath.write(myHttpClient.responseData);
+		     },
+		     // function called when an error occurs, including a timeout
+		     onerror : function(e) {
+		         //Ti.API.debug(e.error);
+		         alert('error');
+		     },
+		     timeout : 5000  // in milliseconds
+		});
 		
+		 client.open("GET", downloadingFileUrl);
+		 // Send the request.
+		 client.send(); 
 	}
 	
 		
