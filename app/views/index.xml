@@ -1,0 +1,35 @@
+<Alloy>
+	<Window id="openWebApp" fullscreen="true" modal="true" navBarHidden="true" platform="android,ios" exitOnClose="true">
+		
+  	<AlertDialog id="successCookie" onClick="doClick" title="Success"
+            message="The Cookie was created and saved successfully" cancel="1">
+
+            <!-- The ButtonNames tag sets the buttonNames property. -->
+            <ButtonNames>
+                <ButtonName>Confirm</ButtonName>
+                <ButtonName>Cancel</ButtonName>
+                <ButtonName>Help</ButtonName>
+            </ButtonNames>
+        </AlertDialog>
+  	
+  	<AlertDialog id="failCookie" onClick="doClick" title="Fail"
+            message="The Cookie was not created and not saved" cancel="1">
+
+            <!-- The ButtonNames tag sets the buttonNames property. -->
+            <ButtonNames>
+                <ButtonName>Confirm</ButtonName>
+                <ButtonName>Cancel</ButtonName>
+                <ButtonName>Help</ButtonName>
+            </ButtonNames>
+        </AlertDialog>
+        
+  	<Menu platform="android">
+    <MenuItem title="Home" onClick="viewWebPage"/>
+    <MenuItem title="Close" onClick="closeWindow"/>
+    </Menu> 
+	
+	<WebView id="openWebPage" url="http://mobile-directory.island-interactive.com/" />
+	
+	
+  </Window>
+</Alloy>

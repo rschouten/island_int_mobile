@@ -1,0 +1,23 @@
+"#openWebApp":{
+	layout: 'composite',
+	fullscreen: true,
+	navBarHidden: true
+}
+
+"#openWebPage":{
+	layout: 'horizontal',
+	fullscreen: true,
+	navBarHidden: true
+}
+
+"#openIslInt":{
+	layout: 'horizontal',
+	fullscreen: true,
+	navBarHidden: true
+}
+
+"#openMobileD": {
+	layout: 'horizontal',
+	fullscreen: true,
+	navBarHidden: true
+}

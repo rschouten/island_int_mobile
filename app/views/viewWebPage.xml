@@ -1,0 +1,15 @@
+<Alloy>
+	<Window id="openIslInt" fullscreen="true" modal="false" platform="android,ios" exitOnClose="true">
+		
+	<Menu platform="android">
+    <MenuItem title="Home" onClick="viewIslInt"/>
+    <MenuItem title="Close" onClick="closeWindow"/>
+    </Menu>
+    
+	
+	<WebView id="openMobileD" url="http://mobile-directory.island-interactive.com/" />
+	
+	
+		
+	</Window>
+</Alloy>
